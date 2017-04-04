@@ -107,4 +107,4 @@ ENV PATH $PATH:$GRADLE_HOME/bin
 RUN apt-get clean
 
 # Install libstdc++
-RUN apk update && apk add bash libstdc++ && rm -rf /var/cache/apk/*
+#RUN apk update && apk add bash libstdc++ && rm -rf /var/cache/apk/*
