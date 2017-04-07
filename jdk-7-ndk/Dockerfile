@@ -1,1 +1,0 @@
-../jdk-7-ndk-r12b/Dockerfile
