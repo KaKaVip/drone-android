@@ -83,5 +83,8 @@ RUN cd /usr/bin && \
     ln -s gradle-3.3 gradle && \
     rm gradle-3.3-all.zip
 
+# Framgia CI Tools
+RUN wget -O /usr/bin/framgia-ci https://raw.githubusercontent.com/framgia/ci-report-tool/master/dist/framgia-ci && chmod +x /usr/bin/framgia-ci
+
 # Cleaning
 RUN apt-get clean

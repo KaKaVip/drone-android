@@ -109,8 +109,14 @@ PROFILES.forEach(function(profile) {
     dockerFile.append("    rm gradle-"+ profile.gradleVersion +"-all.zip").appendLine();
     dockerFile.appendLine();
 
+    // Framgia CI Tools
+    dockerFile.append("# Framgia CI Tools").appendLine();
+    dockerFile.append("RUN wget -O /usr/bin/framgia-ci https://raw.githubusercontent.com/framgia/ci-report-tool/master/dist/framgia-ci && chmod +x /usr/bin/framgia-ci").appendLine();
+    dockerFile.appendLine();
+    
     dockerFile.append("# Cleaning").appendLine();
     dockerFile.append("RUN apt-get clean").appendLine();
+    
     // Copy licenses
     fs.copySync("licenses",dir + "/licenses");
     console.log("   copy licenses");
