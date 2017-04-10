@@ -63,41 +63,10 @@ PROFILES.forEach(function(profile) {
     dockerFile.appendLine();
 
     dockerFile.append("# Update Android SDK").appendLine();
-    dockerFile.append("RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | sdkmanager \"tools\" && \\").appendLine();
-    dockerFile.append("    ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | sdkmanager \"platform-tools\" && \\").appendLine();
-    dockerFile.append("    ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | sdkmanager \"extras;android;m2repository\" && \\").appendLine();
-    dockerFile.append("    ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | sdkmanager \"extras;google;google_play_services\" && \\").appendLine();
-    dockerFile.append("    ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | sdkmanager \"extras;google;m2repository\"").appendLine();
-
-    dockerFile.appendLine();
-   
-    profile.android.apiLevels.forEach(function(apiLevel) {
-        dockerFile.appendLine();
-        dockerFile.append("RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | sdkmanager \"platforms;" + apiLevel + "\"").appendLine();
-    });
-
-    profile.android.buildTools.forEach(function(buildTool) {
-        dockerFile.appendLine();
-        dockerFile.append("RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | sdkmanager \"build-tools;" + buildTool + "\"").appendLine();
-    });
+    dockerFile.append("RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | sdkmanager \"" + profile.android.packages.join("\" \"") +  "\"").appendLine();
 
     dockerFile.appendLine();
     dockerFile.appendLine();
-
-    //Android NDK
-    if (typeof profile.android.ndkVersion !== "undefined") {
-        dockerFile.append("# Install Android NDK").appendLine();
-        dockerFile.append("ENV ANDROID_NDK_HOME /opt/android/ndk-" + profile.android.ndkVersion).appendLine();
-        dockerFile.append("ENV PATH ${PATH}:${ANDROID_NDK_HOME}").appendLine();
-        dockerFile.appendLine();
-        dockerFile.append("RUN cd /opt/android && \\").appendLine();
-        dockerFile.append("    wget -q https://dl.google.com/android/repository/android-ndk-"+ profile.android.ndkVersion +"-linux-x86_64.zip && \\").appendLine();
-        dockerFile.append("    unzip android-ndk-"+ profile.android.ndkVersion +"-linux-x86_64.zip && \\").appendLine();
-        dockerFile.append("    mv android-ndk-"+ profile.android.ndkVersion +" ndk-"+ profile.android.ndkVersion+"  && \\").appendLine();
-        dockerFile.append("    rm android-ndk-"+ profile.android.ndkVersion +"-linux-x86_64.zip").appendLine();
-        dockerFile.appendLine();
-    }
-    
 
     dockerFile.append("# Install Gradle").appendLine();
     dockerFile.append("ENV GRADLE_HOME /usr/bin/gradle").appendLine();

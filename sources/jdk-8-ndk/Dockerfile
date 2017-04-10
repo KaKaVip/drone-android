@@ -29,7 +29,7 @@ RUN cd /opt/android/sdk && \
     rm tools_r25.2.3-linux.zip
 
 # Update Android SDK
-RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | sdkmanager "tools" "platform-tools" "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository" "platforms;android-23" "platforms;android-24" "platforms;android-25" "build-tools;23.0.0" "build-tools;23.0.1" "build-tools;23.0.2" "build-tools;23.0.3" "build-tools;24.0.1" "build-tools;24.0.2" "build-tools;24.0.3" "build-tools;25.0.0" "build-tools;25.0.1" "build-tools;25.0.2"
+RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | sdkmanager "tools" "platform-tools" "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository" "platforms;android-23" "platforms;android-24" "platforms;android-25" "build-tools;23.0.0" "build-tools;23.0.1" "build-tools;23.0.2" "build-tools;23.0.3" "build-tools;24.0.1" "build-tools;24.0.2" "build-tools;24.0.3" "build-tools;25.0.0" "build-tools;25.0.1" "build-tools;25.0.2" "ndk-bundle" "cmake;3.6.3155560" "lldb;2.3"
 
 
 # Install Gradle

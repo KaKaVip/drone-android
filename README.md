@@ -2,6 +2,12 @@
 
 Thêm profile mới cho project tại `profiles.js`
 
+Để biết tên package bạn gõ lệnh sau trên máy của bạn
+
+```
+...$./android_sdk/tools/bin/sdkmanager --list
+```
+
 Tiếp chạy lệnh `node app.js` để tạo Dockerfile cho Project
 
 Thư mục `sources` nới lưu các Dockerfile được tạo ra
@@ -9,8 +15,7 @@ Thư mục `sources` nới lưu các Dockerfile được tạo ra
 ### Các profile hiện hành:
 - fdplugins/android:latest (fdplugins/android:jdk-8)
 - fdplugins/android:jdk-8
-- fdplugins/android:jdk-8-ndk-r14b
-- fdplugins/android:jdk-8-ndk-r12b
+- fdplugins/android:jdk-8-ndk
 
 ### Profile hiện tại đang bao gồm:
 - Sdk Version `r25.2.3`
