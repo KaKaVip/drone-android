@@ -57,9 +57,9 @@ PROFILES.forEach(function(profile) {
     dockerFile.append("ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools").appendLine();
     dockerFile.appendLine();
     dockerFile.append("RUN cd /opt/android/sdk && \\").appendLine()
-    dockerFile.append("    wget -q https://dl.google.com/android/repository/tools_" + profile.android.sdkVersion + "-linux.zip && \\").appendLine();
-    dockerFile.append("    unzip tools_" + profile.android.sdkVersion + "-linux.zip && \\").appendLine();
-    dockerFile.append("    rm tools_" + profile.android.sdkVersion + "-linux.zip").appendLine();
+    dockerFile.append("    wget -q https://dl.google.com/android/repository/sdk-tools-linux-" + profile.android.sdkVersion + ".zip && \\").appendLine();
+    dockerFile.append("    unzip sdk-tools-linux-" + profile.android.sdkVersion + ".zip && \\").appendLine();
+    dockerFile.append("    rm sdk-tools-linux-" + profile.android.sdkVersion + ".zip").appendLine();
     dockerFile.appendLine();
 
     dockerFile.append("# Update Android SDK").appendLine();
