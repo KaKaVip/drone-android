@@ -16,7 +16,7 @@ module.exports = [
                 "build-tools;23.0.0", "build-tools;23.0.1", "build-tools;23.0.2", "build-tools;23.0.3",
                 "build-tools;24.0.1", "build-tools;24.0.2", "build-tools;24.0.3", 
                 "build-tools;25.0.0", "build-tools;25.0.1", "build-tools;25.0.2", "build-tools;25.0.3",
-                "build-tools;26.0.0" 
+                "build-tools;26.0.0", "build-tools;26.0.1"
             ]
         }
     },
@@ -37,7 +37,7 @@ module.exports = [
                 "build-tools;23.0.0", "build-tools;23.0.1", "build-tools;23.0.2", "build-tools;23.0.3",
                 "build-tools;24.0.1", "build-tools;24.0.2", "build-tools;24.0.3", 
                 "build-tools;25.0.0", "build-tools;25.0.1", "build-tools;25.0.2", "build-tools;25.0.3",
-                "build-tools;26.0.0", 
+                "build-tools;26.0.0", "build-tools;26.0.1"
                 // NDK
                 "ndk-bundle", "cmake;3.6.4111459", "lldb;2.3"
             ]
