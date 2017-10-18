@@ -29,7 +29,7 @@ RUN cd /opt/android/sdk && \
     rm sdk-tools-linux-3859397.zip
 
 # Update Android SDK
-RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | sdkmanager "tools" "platform-tools" "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository" "extras;google;instantapps" "platforms;android-23" "platforms;android-24" "platforms;android-25" "platforms;android-26" "build-tools;23.0.0" "build-tools;23.0.1" "build-tools;23.0.2" "build-tools;23.0.3" "build-tools;24.0.1" "build-tools;24.0.2" "build-tools;24.0.3" "build-tools;25.0.0" "build-tools;25.0.1" "build-tools;25.0.2" "build-tools;25.0.3" "build-tools;26.0.0"
+RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | sdkmanager "tools" "platform-tools" "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository" "extras;google;instantapps" "platforms;android-23" "platforms;android-24" "platforms;android-25" "platforms;android-26" "build-tools;23.0.0" "build-tools;23.0.1" "build-tools;23.0.2" "build-tools;23.0.3" "build-tools;24.0.1" "build-tools;24.0.2" "build-tools;24.0.3" "build-tools;25.0.0" "build-tools;25.0.1" "build-tools;25.0.2" "build-tools;25.0.3" "build-tools;26.0.0" "build-tools;26.0.1"
 
 
 # Install Gradle
